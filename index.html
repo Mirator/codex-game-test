@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Codex Convergence</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="background-grid"></div>
+    <div class="game-shell">
+      <header class="game-header">
+        <div class="title-block">
+          <h1>Codex Convergence</h1>
+          <p class="lore">Restore the Codex Obscura before the archive collapses.</p>
+        </div>
+        <div class="header-controls">
+          <button class="control-button" id="startButton">Start Ritual</button>
+          <button class="control-button" id="pauseButton">Pause</button>
+          <button class="control-button" id="restartButton">Restart</button>
+        </div>
+      </header>
+      <main class="game-layout">
+        <aside class="hud-left">
+          <section class="hud-panel">
+            <h2>Chronometer</h2>
+            <div class="timer-display">
+              <span id="timeRemaining">90.0</span>
+              <span class="timer-label">seconds</span>
+            </div>
+          </section>
+          <section class="hud-panel">
+            <h2>Combo Flux</h2>
+            <div class="combo-display" id="comboDisplay">x1</div>
+          </section>
+          <section class="hud-panel">
+            <h2>Codex Progress</h2>
+            <div class="progress-bar">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+          </section>
+        </aside>
+        <section class="grid-wrapper">
+          <div class="grid-overlay" id="gridOverlay">Tap Start Ritual to begin.</div>
+          <div class="grid" id="grid"></div>
+        </section>
+        <aside class="hud-right">
+          <section class="hud-panel">
+            <h2>Score</h2>
+            <div class="score-display" id="scoreDisplay">0</div>
+          </section>
+          <section class="hud-panel">
+            <h2>Verses Bound</h2>
+            <div class="stat-display" id="versesDisplay">0</div>
+          </section>
+          <section class="hud-panel">
+            <h2>Sigil Sparks</h2>
+            <div class="stat-display" id="sigilDisplay">0</div>
+          </section>
+          <section class="hud-panel instructions">
+            <h2>Instructions</h2>
+            <ul>
+              <li>Click a fragment cluster of 3+ matching runes.</li>
+              <li>Clusters collapse, new fragments fall in.</li>
+              <li>Act quickly to sustain combo flux and earn more score.</li>
+              <li>Large bindings (5+) trigger sigil sparks and extra time.</li>
+            </ul>
+          </section>
+        </aside>
+      </main>
+      <footer class="game-footer">
+        <div class="verse-display" id="verseDisplay">Awaiting the first verse...</div>
+      </footer>
+    </div>
+
+    <div class="modal hidden" id="titleModal">
+      <div class="modal-content">
+        <h2>Codex Convergence</h2>
+        <p>
+          The Codex Obscura has shattered into countless fragments. Bind matching
+          runes to weave verses back together before the chronometer expires.
+        </p>
+        <button class="control-button" id="modalStartButton">Commence Binding</button>
+      </div>
+    </div>
+
+    <div class="modal hidden" id="gameOverModal">
+      <div class="modal-content">
+        <h2>Codex Integrity Lost</h2>
+        <p>Your final score: <span id="finalScore">0</span></p>
+        <p>Verses restored: <span id="finalVerses">0</span></p>
+        <p>Highest inscription: <span id="highScore">0</span></p>
+        <button class="control-button" id="playAgainButton">Attempt Again</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
