@@ -64,6 +64,7 @@ function init() {
   showModal(titleModal);
   showOverlay("Tap Start Ritual to begin.");
   updateHUD();
+  updateControlStates();
   requestAnimationFrame(gameLoop);
 }
 
